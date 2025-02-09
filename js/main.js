@@ -16,3 +16,14 @@ function getComputerChoice() {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+function getHumanChoice() {
+    // Ask the player for their turn
+    const choice = prompt('Please choose rock, paper, or scissors');
+    
+    // Return the choice if it is valid
+    if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
+        alert('Invalid choice. Please choose rock, paper, or scissors');
+        return getHumanChoice();
+    }
+}

@@ -70,3 +70,23 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 }
+
+function playGame() {
+    // Play best of 5
+    while (humanScore < 3 && computerScore < 3) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+
+    //Announce the winner
+    if (humanScore > computerScore) {
+        alert('You win the game!');
+    } else {
+        alert('You loose the game!');
+    }
+
+    // Reset the scores
+    humanScore = 0;
+    computerScore = 0;
+}

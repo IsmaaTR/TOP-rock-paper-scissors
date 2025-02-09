@@ -1,3 +1,7 @@
+// Class variables
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     // Generate a random number between 0 and 2 
     const number = getRandomInt(3);
@@ -25,5 +29,22 @@ function getHumanChoice() {
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
         alert('Invalid choice. Please choose rock, paper, or scissors');
         return getHumanChoice();
+    }
+}
+
+function playRound(humanChoice, computerChoice) {
+    // Determine the winner
+    if (humanChoice === computerChoice) {
+        alert('It\'s a tie!');
+    } else if (
+        (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        alert('You win!');
+        humanScore++;
+    } else {
+        alert('You lose!');
+        computerScore++;
     }
 }

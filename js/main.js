@@ -30,6 +30,8 @@ function getHumanChoice() {
         alert('Invalid choice. Please choose rock, paper, or scissors');
         return getHumanChoice();
     }
+
+    return choice;
 }
 
 function playRound(humanChoice, computerChoice) {
